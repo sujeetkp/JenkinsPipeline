@@ -3,7 +3,7 @@ pipeline {
     agent any
     
     parameters{
-       string(name: 'INPUT_STR', defaultValue:'test, 'description:'test string')
+       string(name: 'INPUT_STR', defaultValue:'test', 'description:'test string')
     } 
     environment{
        MY_VAR='my variable'
