@@ -7,7 +7,6 @@ pipeline {
             steps { 
                sh 'echo Build'
                sh 'hostname'
-               sh 'cat Dockerfile'
             }
             when{
               branch 'master'
