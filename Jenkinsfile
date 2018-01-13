@@ -9,6 +9,9 @@ pipeline {
                sh 'hostname'
                sh 'cat Dockerfile'
             }
+            when{
+              branch 'master'
+            }
         }
         stage('Test'){
             steps {
