@@ -2,6 +2,9 @@ pipeline {
     
     agent any
     
+    parameters{
+       string(name: INPUT_STR, defaultValue:'test', description:'test string')
+    } 
     stages {
         stage('Build') {
             steps { 
@@ -16,6 +19,7 @@ pipeline {
             steps {
                 sh 'echo Test'
                 sh 'hostname'
+                echo params.INPUT_STR
             }
         }
         stage('Deploy') {
