@@ -33,6 +33,9 @@ pipeline {
                sh 'echo Deploy'
                sh 'hostname'
             }
+            when{
+               environment name:'GIT_BRANCH',value:'origin/dev'
+            }
         }
     }
 }
