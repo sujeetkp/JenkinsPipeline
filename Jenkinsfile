@@ -3,8 +3,11 @@ pipeline {
     agent any
     
     parameters{
-       string(name: 'INPUT_STR', description:'test string')
+       string(name: 'INPUT_STR', defaultValue:'test, 'description:'test string')
     } 
+    environment{
+       MY_VAR='my variable'
+    }
     stages {
         stage('Build') {
             steps { 
@@ -20,6 +23,7 @@ pipeline {
                 sh 'echo Test'
                 sh 'hostname'
                 echo params.INPUT_STR
+                echo env.MY_VAR
             }
         }
         stage('Deploy') {
