@@ -24,6 +24,7 @@ pipeline {
                 sh 'hostname'
                 echo params.INPUT_STR
                 echo env.MY_VAR
+                echo env.BRANCH_NAME
             }
         }
         stage('Deploy') {
